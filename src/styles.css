@@ -1,3 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/source-sans-3";
 
-@import 'tailwindcss';
+/*
+ * Vigadó arculat – színek és betűtípusok (lapos színek, színátmenet nélkül).
+ *   Tinta   #1f1b18  szöveg, eladott szék
+ *   Papír   #f7f1e6  háttér
+ *   Tégla   #9a2f23  fő márkaszín, gombok, kiválasztott szék
+ *   Réz     #b4842a  kiemelés, foglalt szék
+ *   Fenyő   #2f5b4d  szabad szék, siker
+ * Címsor: Fraunces (talpas) · Törzsszöveg: Source Sans 3
+ */
+@theme {
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3 Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-ink: #1f1b18;
+  --color-ink-soft: #5a5149;
+  --color-paper: #f7f1e6;
+  --color-paper-deep: #ece3d1;
+  --color-line: #d4c7ad;
+  --color-brick: #9a2f23;
+  --color-brick-dark: #741f16;
+  --color-brass: #b4842a;
+  --color-brass-soft: #f1dfb3;
+  --color-pine: #2f5b4d;
+  --color-pine-soft: #dcebe4;
+  --color-alert-soft: #f6dcd7;
+}
+
+@layer base {
+  html { font-family: var(--font-sans); color: var(--color-ink); background: var(--color-paper); }
+  body { min-height: 100vh; font-size: 1.0625rem; line-height: 1.5; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+  :focus-visible { outline: 3px solid var(--color-brass); outline-offset: 2px; }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    min-height: 2.75rem; padding: .5rem 1.25rem; font-weight: 600; border-radius: .25rem;
+    border: 2px solid transparent; transition: background-color .15s, color .15s;
+  }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+  .btn-primary { background: var(--color-brick); color: #fff; }
+  .btn-primary:hover:not(:disabled) { background: var(--color-brick-dark); }
+  .btn-outline { background: transparent; color: var(--color-ink); border-color: var(--color-ink); }
+  .btn-outline:hover:not(:disabled) { background: var(--color-ink); color: var(--color-paper); }
+  .field {
+    width: 100%; min-height: 2.75rem; padding: .5rem .75rem; background: #fff;
+    border: 2px solid var(--color-line); border-radius: .25rem;
+  }
+  .field:focus { border-color: var(--color-ink); outline: none; }
+  .card { background: #fff; border: 1px solid var(--color-line); border-radius: .25rem; }
+}

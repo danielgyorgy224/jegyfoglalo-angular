@@ -1,0 +1,59 @@
+<a routerLink="/" class="text-sm font-semibold text-brick underline">← Vissza a műsorhoz</a>
+
+@switch (state().status) {
+  @case ('loading') {
+    <app-status-message kind="loading" />
+  }
+  @case ('error') {
+    <div class="mt-6">
+      <app-status-message kind="error" [message]="$any(state()).problem.message" (retry)="retry()" />
+    </div>
+  }
+  @default {
+    @let entry = $any(state()).data;
+    <article class="mt-4 grid gap-8 md:grid-cols-[18rem_1fr]">
+      <img
+        [src]="entry.movie.posterUrl | poster"
+        [alt]="entry.movie.title + ' plakátja'"
+        class="aspect-[300/440] w-full max-w-xs border border-line object-cover"
+      />
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-brass">
+          {{ entry.movie.type === 'film' ? 'Film' : 'Előadás' }}
+        </p>
+        <h1 class="text-3xl sm:text-4xl">{{ entry.movie.title }}</h1>
+        <p class="mt-2 text-ink-soft">
+          {{ entry.movie.genre }} · {{ entry.movie.durationMin }} perc · korhatár: {{ entry.movie.ageRating }}
+        </p>
+        <p class="mt-4 max-w-prose">{{ entry.movie.description }}</p>
+
+        <h2 class="mt-8 text-2xl">Időpontok</h2>
+        @if (days().length === 0) {
+          <p class="mt-3 text-ink-soft">Jelenleg nincs meghirdetett időpont.</p>
+        }
+        @for (day of days(); track day.key) {
+          <section class="mt-5">
+            <h3 class="text-base font-sans font-bold capitalize">{{ day.iso | huDate: 'day' }}</h3>
+            <ul class="mt-2 space-y-2">
+              @for (sc of day.screenings; track sc.id) {
+                <li>
+                  <a
+                    [routerLink]="['/screenings', sc.id]"
+                    class="card flex flex-wrap items-center justify-between gap-2 px-4 py-3 hover:border-ink"
+                  >
+                    <span>
+                      <span class="text-xl font-bold">{{ sc.startsAt | huDate: 'time' }}</span>
+                      <span class="ml-3 text-ink-soft">{{ sc.venue.name }} · {{ sc.hall.name }}</span>
+                    </span>
+                    <span class="text-sm text-ink-soft">Alapár: {{ sc.basePrice | ft }}</span>
+                    <span class="btn btn-primary min-h-10">Helyek kiválasztása</span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </section>
+        }
+      </div>
+    </article>
+  }
+}

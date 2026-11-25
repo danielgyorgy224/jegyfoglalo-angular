@@ -1,0 +1,139 @@
+@let map = seatmap();
+
+@if (!map) {
+  @if (loadProblem(); as lp) {
+    <app-status-message kind="error" [message]="lp.message" (retry)="retry()" />
+  } @else {
+    <app-status-message kind="loading" />
+  }
+} @else {
+  <a [routerLink]="['/movies', map.movie.id]" class="text-sm font-semibold text-brick underline">← Vissza az időpontokhoz</a>
+
+  <header class="mt-3">
+    <h1 class="text-3xl sm:text-4xl">{{ map.movie.title }}</h1>
+    <p class="mt-1 text-ink-soft">
+      <span class="font-semibold text-ink">{{ map.screening.startsAt | huDate: 'full' }}</span>
+      · {{ map.venue.name }}, {{ map.hall.name }}
+    </p>
+  </header>
+
+  @if (!map.bookable) {
+    <p class="mt-4 rounded border-2 border-brass bg-brass-soft p-3 font-semibold" role="alert">
+      {{ map.bookableReason }}
+    </p>
+  }
+  @if (loadProblem(); as lp) {
+    <p class="mt-4 rounded border-2 border-brass bg-brass-soft p-3 text-sm" role="status">
+      {{ lp.message }}
+      <button type="button" class="ml-2 font-semibold underline" (click)="retry()">Újra</button>
+    </p>
+  }
+  @if (notice(); as n) {
+    <p class="mt-4 rounded border-2 border-brass bg-brass-soft p-3 text-sm" role="status">
+      {{ n }}
+      <button type="button" class="ml-2 font-semibold underline" (click)="notice.set(null)">Rendben</button>
+    </p>
+  }
+
+  <div class="mt-6 grid gap-8 lg:grid-cols-[1fr_22rem]">
+    <section aria-labelledby="seat-heading" class="card min-w-0 p-3 sm:p-6">
+      <h2 id="seat-heading" class="mb-4 text-xl">Válaszd ki a helyeidet</h2>
+      <app-seat-map
+        [seats]="map.seats"
+        [sectors]="map.sectors"
+        [prices]="map.prices"
+        [selected]="selected()"
+        [maxSelect]="map.maxSeats"
+        [readonly]="!map.bookable"
+        (selectionChange)="onSelectionChange($event)"
+      />
+      <p class="mt-4 text-center text-sm text-ink-soft">
+        Egyszerre legfeljebb {{ map.maxSeats }} széket választhatsz. A székállapotok percenként többször frissülnek.
+      </p>
+    </section>
+
+    <aside id="order" class="lg:sticky lg:top-4 lg:self-start" aria-labelledby="order-heading">
+      <div class="card p-4 sm:p-6">
+        <h2 id="order-heading" class="text-xl">Rendelésed</h2>
+
+        @if (lines().length === 0) {
+          <p class="mt-3 text-ink-soft">Még nem választottál helyet.</p>
+        } @else {
+          <ul class="mt-3 divide-y divide-line">
+            @for (l of lines(); track l.id) {
+              <li class="flex items-center justify-between py-2">
+                <span class="font-semibold">{{ l.label }}</span>
+                <span class="flex items-center gap-3">
+                  {{ l.price | ft }}
+                  <button
+                    type="button"
+                    class="rounded border border-line px-2 text-sm hover:border-ink"
+                    [attr.aria-label]="l.label + ' szék eltávolítása'"
+                    (click)="onSelectionChange(selected().filter(id => id !== l.id))"
+                  >
+                    ✕
+                  </button>
+                </span>
+              </li>
+            }
+          </ul>
+          <p class="mt-3 flex items-baseline justify-between border-t-2 border-ink pt-3 text-lg font-bold">
+            <span>Végösszeg</span>
+            <span aria-live="polite">{{ total() | ft }}</span>
+          </p>
+        }
+
+        <form [formGroup]="form" class="mt-5 space-y-4" (ngSubmit)="pay()" novalidate>
+          <div>
+            <label for="customerName" class="block text-sm font-semibold">Név</label>
+            <input id="customerName" class="field mt-1" formControlName="customerName" autocomplete="name" />
+            @if (form.controls.customerName.touched && form.controls.customerName.invalid) {
+              <p class="mt-1 text-sm text-brick" role="alert">Add meg a neved (legalább 2 karakter).</p>
+            }
+          </div>
+          <div>
+            <label for="customerContact" class="block text-sm font-semibold">E-mail-cím vagy telefonszám</label>
+            <input id="customerContact" class="field mt-1" formControlName="customerContact" autocomplete="email" />
+            @if (form.controls.customerContact.touched && form.controls.customerContact.invalid) {
+              <p class="mt-1 text-sm text-brick" role="alert">Adj meg elérhetőséget (legalább 3 karakter).</p>
+            }
+          </div>
+
+          @if (problem(); as p) {
+            <p class="rounded border-2 border-brick bg-alert-soft p-3 text-sm font-semibold" role="alert">{{ p.message }}</p>
+          }
+
+          <div class="grid gap-2">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="busy() || !map.bookable || lines().length === 0"
+            >
+              Fizetés bankkártyával{{ lines().length ? ' · ' + (total() | ft) : '' }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline"
+              [disabled]="busy() || !map.bookable || lines().length === 0"
+              (click)="reserve()"
+            >
+              Csak foglalok (fizetés nélkül)
+            </button>
+          </div>
+          <p class="text-xs text-ink-soft">
+            A bankkártyás fizetés külső fizetési szolgáltatónál történik. A kártyaadataidat nem látjuk és nem tároljuk.
+            A fizetés idejére a helyeket 10 percre zároljuk.
+          </p>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  @if (lines().length > 0) {
+    <div class="fixed inset-x-0 bottom-0 z-20 flex items-center justify-between gap-3 border-t-4 border-ink bg-paper px-4 py-3 lg:hidden">
+      <span class="font-bold">{{ lines().length }} szék · {{ total() | ft }}</span>
+      <a href="#order" class="btn btn-primary min-h-10">Tovább</a>
+    </div>
+    <div class="h-16 lg:hidden" aria-hidden="true"></div>
+  }
+}

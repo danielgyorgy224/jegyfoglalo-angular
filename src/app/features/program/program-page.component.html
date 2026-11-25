@@ -1,0 +1,95 @@
+<section>
+  <h1 class="text-3xl sm:text-4xl">Műsor</h1>
+  <p class="mt-2 max-w-2xl text-ink-soft">
+    Válassz filmet vagy előadást, majd időpontot – a következő lépésben kiválaszthatod a helyeidet.
+  </p>
+
+  <div class="mt-6 flex flex-wrap items-end gap-4">
+    <div role="group" aria-label="Típus szerinti szűrés" class="flex gap-2">
+      @for (opt of typeOptions; track opt.value) {
+        <button
+          type="button"
+          class="btn min-h-10 px-4"
+          [class]="typeFilter() === opt.value ? 'btn-primary' : 'btn-outline'"
+          [attr.aria-pressed]="typeFilter() === opt.value"
+          (click)="typeFilter.set(opt.value)"
+        >
+          {{ opt.label }}
+        </button>
+      }
+    </div>
+    @if (venues().length > 1) {
+      <label class="block text-sm font-semibold">
+        Helyszín
+        <select class="field mt-1 min-w-52" (change)="onVenueChange($any($event.target).value)">
+          <option value="">Minden helyszín</option>
+          @for (v of venues(); track v.id) {
+            <option [value]="v.id">{{ v.name }}</option>
+          }
+        </select>
+      </label>
+    }
+  </div>
+
+  @switch (state().status) {
+    @case ('loading') {
+      <app-status-message kind="loading" />
+    }
+    @case ('error') {
+      <div class="mt-6">
+        <app-status-message kind="error" [message]="$any(state()).problem.message" (retry)="reload()" />
+      </div>
+    }
+    @default {
+      @if (entries().length === 0) {
+        <p class="mt-10 rounded border border-line bg-white p-6 text-center text-ink-soft">
+          A megadott szűrőkkel jelenleg nincs elérhető előadás.
+        </p>
+      } @else {
+        <ul class="mt-8 grid gap-6 md:grid-cols-2">
+          @for (entry of entries(); track entry.movie.id) {
+            <li class="card flex gap-4 p-4">
+              <a [routerLink]="['/movies', entry.movie.id]" class="block w-28 shrink-0 sm:w-36" [attr.aria-label]="entry.movie.title + ' részletei'">
+                <img
+                  [src]="entry.movie.posterUrl | poster"
+                  [alt]="entry.movie.title + ' plakátja'"
+                  class="aspect-[300/440] w-full border border-line object-cover"
+                  loading="lazy"
+                />
+              </a>
+              <div class="min-w-0 flex-1">
+                <p class="text-xs font-bold uppercase tracking-wider text-brass">
+                  {{ entry.movie.type === 'film' ? 'Film' : 'Előadás' }}
+                </p>
+                <h2 class="text-xl sm:text-2xl">
+                  <a [routerLink]="['/movies', entry.movie.id]" class="hover:text-brick">{{ entry.movie.title }}</a>
+                </h2>
+                <p class="mt-1 text-sm text-ink-soft">
+                  {{ entry.movie.genre }} · {{ entry.movie.durationMin }} perc · {{ entry.movie.ageRating }}+
+                </p>
+                <ul class="mt-3 space-y-2" [attr.aria-label]="entry.movie.title + ' időpontjai'">
+                  @for (sc of entry.screenings.slice(0, maxShown); track sc.id) {
+                    <li>
+                      <a
+                        [routerLink]="['/screenings', sc.id]"
+                        class="block rounded border-2 border-ink px-3 py-2 text-sm hover:bg-ink hover:text-paper"
+                      >
+                        <span class="font-bold">{{ sc.startsAt | huDate: 'short' }}</span>
+                        <span class="block text-xs opacity-80">{{ sc.venue.name }} · {{ sc.hall.name }}</span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+                @if (entry.screenings.length > maxShown) {
+                  <a [routerLink]="['/movies', entry.movie.id]" class="mt-2 inline-block text-sm font-semibold text-brick underline">
+                    Mind a {{ entry.screenings.length }} időpont
+                  </a>
+                }
+              </div>
+            </li>
+          }
+        </ul>
+      }
+    }
+  }
+</section>
