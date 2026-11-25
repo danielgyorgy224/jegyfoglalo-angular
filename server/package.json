@@ -1,12 +1,17 @@
 {
-    "name": "teamflow-api",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-    "start": "json-server --watch db.json --port 3000",
-    "reset": "node reset.cjs"
-    },
-    "devDependencies": {
-    "json-server": "0.17.4"
-    }
+  "name": "vigado-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kisújszállási Vigadó jegyfoglaló – json-server alapú API (A személy: alap, auth, nyilvános végpontok)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "json-server": "0.17.4",
+    "jsonwebtoken": "^9.0.2",
+    "stripe": "^17.0.0"
+  }
 }

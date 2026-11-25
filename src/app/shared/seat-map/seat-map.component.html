@@ -1,0 +1,52 @@
+<div class="overflow-x-auto pb-2" role="group" aria-label="Terem ülésrendje">
+  <div class="mx-auto w-max min-w-full">
+    <div
+      class="mx-auto mb-6 max-w-sm border-t-4 border-ink pt-1 text-center text-xs font-semibold uppercase tracking-[0.3em] text-ink-soft"
+      aria-hidden="true"
+    >
+      Vászon / színpad
+    </div>
+
+    @for (sector of sectorViews(); track sector.id) {
+      <section class="mb-5" [attr.aria-label]="sector.name">
+        <h3 class="mb-2 text-center font-sans text-sm font-semibold uppercase tracking-wide text-ink-soft">
+          {{ sector.name }}
+          @if (sector.priceLabel) {
+            <span class="ml-1 normal-case text-ink">· {{ sector.priceLabel }} Ft</span>
+          }
+        </h3>
+        @for (row of sector.rows; track row.name) {
+          <div class="mb-1 flex items-center justify-center gap-0.5 sm:gap-1">
+            <span class="w-5 shrink-0 text-center text-sm font-bold text-ink-soft sm:w-6" aria-hidden="true">{{ row.name }}</span>
+            @for (seat of row.seats; track seat.id) {
+              <button
+                type="button"
+                class="flex size-7 shrink-0 items-center justify-center rounded-t-lg rounded-b-sm text-xs font-bold sm:size-9 sm:text-sm"
+                [class]="meta[stateOf(seat)].classes"
+                [disabled]="!canToggle(seat)"
+                [attr.aria-pressed]="canToggle(seat) ? stateOf(seat) === 'selected' : null"
+                [attr.aria-label]="ariaLabel(seat)"
+                [attr.title]="seat.label + ' · ' + meta[stateOf(seat)].label + (prices()[seat.id] ? ' · ' + fmt(prices()[seat.id]) + ' Ft' : '')"
+                (click)="toggle(seat)"
+              >
+                {{ stateOf(seat) === 'free' ? seat.number : meta[stateOf(seat)].glyph }}
+              </button>
+            }
+            <span class="hidden w-6 shrink-0 text-center text-sm font-bold text-ink-soft sm:block" aria-hidden="true">{{ row.name }}</span>
+          </div>
+        }
+      </section>
+    }
+  </div>
+</div>
+
+<ul class="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm" aria-label="Jelmagyarázat">
+  @for (item of legend; track item.key) {
+    <li class="flex items-center gap-2">
+      <span class="flex size-7 items-center justify-center rounded-t-lg rounded-b-sm text-xs font-bold" [class]="item.classes + ' !cursor-default'">
+        {{ item.key === 'free' ? '7' : item.glyph }}
+      </span>
+      {{ item.label }}
+    </li>
+  }
+</ul>
