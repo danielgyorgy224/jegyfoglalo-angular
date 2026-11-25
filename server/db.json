@@ -1,0 +1,2396 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Kovács Anna",
+      "email": "admin@vigado.test",
+      "passwordHash": "scrypt$16384$8$1$a1b2c3d4e5f60718293a4b5c6d7e8f90$8d491b23e19cb0e3c3efbbdf81953dd00ef2f829680dec911861e808a0c5eb6cbbe27c8cbd5cae9a20b97fc21978ba0238779901fc96534f4cdc0ad0e4238b10",
+      "role": "admin",
+      "active": true,
+      "createdAt": "2026-11-01T09:00:00+01:00"
+    },
+    {
+      "id": 2,
+      "name": "Szabó Péter",
+      "email": "penztaros@vigado.test",
+      "passwordHash": "scrypt$16384$8$1$0f1e2d3c4b5a69788796a5b4c3d2e1f0$4499a5f9d88a5ee49ac8e48232ee7398b7ee3e7143f6bb9af393fc278bb91e98844b6659cd5ecb430d41a63f9212413484fe9d17d389aafc738d6c1aaf47f631",
+      "role": "cashier",
+      "active": true,
+      "createdAt": "2026-11-01T09:05:00+01:00"
+    },
+    {
+      "id": 3,
+      "name": "Nagy Judit",
+      "email": "inaktiv@vigado.test",
+      "passwordHash": "scrypt$16384$8$1$11223344556677889900aabbccddeeff$f95d24bba0f64b8bf70d788220c0fbd1b698791b37ac507da6bce4e4c18fe56c163fdffa79a309a5c91be9927dc2ebf2716377404a9d764cfbedc0d4c97c4790",
+      "role": "cashier",
+      "active": false,
+      "createdAt": "2026-11-02T10:00:00+01:00"
+    }
+  ],
+  "venues": [
+    {
+      "id": 1,
+      "name": "Kisújszállási Vigadó",
+      "city": "Kisújszállás",
+      "address": "Mintautca 1."
+    },
+    {
+      "id": 2,
+      "name": "Vigadó Nyári Mozi",
+      "city": "Kisújszállás",
+      "address": "Mintakert 2."
+    }
+  ],
+  "halls": [
+    {
+      "id": 1,
+      "venueId": 1,
+      "name": "Nagyterem"
+    },
+    {
+      "id": 2,
+      "venueId": 1,
+      "name": "Kamaraterem"
+    },
+    {
+      "id": 3,
+      "venueId": 2,
+      "name": "Kertmozi"
+    }
+  ],
+  "sectors": [
+    {
+      "id": 1,
+      "hallId": 1,
+      "name": "Első szektor",
+      "rows": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "id": 2,
+      "hallId": 1,
+      "name": "Középső szektor",
+      "rows": [
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "id": 3,
+      "hallId": 1,
+      "name": "Hátsó szektor",
+      "rows": [
+        "H",
+        "I",
+        "J"
+      ]
+    },
+    {
+      "id": 4,
+      "hallId": 2,
+      "name": "Elöl",
+      "rows": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": 5,
+      "hallId": 2,
+      "name": "Hátul",
+      "rows": [
+        "C",
+        "D",
+        "E"
+      ]
+    },
+    {
+      "id": 6,
+      "hallId": 3,
+      "name": "Standard",
+      "rows": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": 7,
+      "hallId": 3,
+      "name": "VIP",
+      "rows": [
+        "E",
+        "F"
+      ]
+    }
+  ],
+  "seats": [
+    {
+      "id": 1,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 1,
+      "label": "A1",
+      "disabled": false
+    },
+    {
+      "id": 2,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 2,
+      "label": "A2",
+      "disabled": false
+    },
+    {
+      "id": 3,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 3,
+      "label": "A3",
+      "disabled": false
+    },
+    {
+      "id": 4,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 4,
+      "label": "A4",
+      "disabled": false
+    },
+    {
+      "id": 5,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 5,
+      "label": "A5",
+      "disabled": false
+    },
+    {
+      "id": 6,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 6,
+      "label": "A6",
+      "disabled": false
+    },
+    {
+      "id": 7,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 7,
+      "label": "A7",
+      "disabled": false
+    },
+    {
+      "id": 8,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 8,
+      "label": "A8",
+      "disabled": false
+    },
+    {
+      "id": 9,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 9,
+      "label": "A9",
+      "disabled": false
+    },
+    {
+      "id": 10,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "A",
+      "number": 10,
+      "label": "A10",
+      "disabled": false
+    },
+    {
+      "id": 11,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 1,
+      "label": "B1",
+      "disabled": false
+    },
+    {
+      "id": 12,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 2,
+      "label": "B2",
+      "disabled": false
+    },
+    {
+      "id": 13,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 3,
+      "label": "B3",
+      "disabled": false
+    },
+    {
+      "id": 14,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 4,
+      "label": "B4",
+      "disabled": false
+    },
+    {
+      "id": 15,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 5,
+      "label": "B5",
+      "disabled": false
+    },
+    {
+      "id": 16,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 6,
+      "label": "B6",
+      "disabled": false
+    },
+    {
+      "id": 17,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 7,
+      "label": "B7",
+      "disabled": false
+    },
+    {
+      "id": 18,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 8,
+      "label": "B8",
+      "disabled": false
+    },
+    {
+      "id": 19,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 9,
+      "label": "B9",
+      "disabled": false
+    },
+    {
+      "id": 20,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "B",
+      "number": 10,
+      "label": "B10",
+      "disabled": false
+    },
+    {
+      "id": 21,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 1,
+      "label": "C1",
+      "disabled": false
+    },
+    {
+      "id": 22,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 2,
+      "label": "C2",
+      "disabled": false
+    },
+    {
+      "id": 23,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 3,
+      "label": "C3",
+      "disabled": false
+    },
+    {
+      "id": 24,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 4,
+      "label": "C4",
+      "disabled": false
+    },
+    {
+      "id": 25,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 5,
+      "label": "C5",
+      "disabled": false
+    },
+    {
+      "id": 26,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 6,
+      "label": "C6",
+      "disabled": false
+    },
+    {
+      "id": 27,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 7,
+      "label": "C7",
+      "disabled": false
+    },
+    {
+      "id": 28,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 8,
+      "label": "C8",
+      "disabled": false
+    },
+    {
+      "id": 29,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 9,
+      "label": "C9",
+      "disabled": false
+    },
+    {
+      "id": 30,
+      "hallId": 1,
+      "sectorId": 1,
+      "row": "C",
+      "number": 10,
+      "label": "C10",
+      "disabled": false
+    },
+    {
+      "id": 31,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 1,
+      "label": "D1",
+      "disabled": false
+    },
+    {
+      "id": 32,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 2,
+      "label": "D2",
+      "disabled": false
+    },
+    {
+      "id": 33,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 3,
+      "label": "D3",
+      "disabled": false
+    },
+    {
+      "id": 34,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 4,
+      "label": "D4",
+      "disabled": false
+    },
+    {
+      "id": 35,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 5,
+      "label": "D5",
+      "disabled": false
+    },
+    {
+      "id": 36,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 6,
+      "label": "D6",
+      "disabled": false
+    },
+    {
+      "id": 37,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 7,
+      "label": "D7",
+      "disabled": false
+    },
+    {
+      "id": 38,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 8,
+      "label": "D8",
+      "disabled": false
+    },
+    {
+      "id": 39,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 9,
+      "label": "D9",
+      "disabled": false
+    },
+    {
+      "id": 40,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "D",
+      "number": 10,
+      "label": "D10",
+      "disabled": false
+    },
+    {
+      "id": 41,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 1,
+      "label": "E1",
+      "disabled": false
+    },
+    {
+      "id": 42,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 2,
+      "label": "E2",
+      "disabled": false
+    },
+    {
+      "id": 43,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 3,
+      "label": "E3",
+      "disabled": false
+    },
+    {
+      "id": 44,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 4,
+      "label": "E4",
+      "disabled": false
+    },
+    {
+      "id": 45,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 5,
+      "label": "E5",
+      "disabled": false
+    },
+    {
+      "id": 46,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 6,
+      "label": "E6",
+      "disabled": false
+    },
+    {
+      "id": 47,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 7,
+      "label": "E7",
+      "disabled": false
+    },
+    {
+      "id": 48,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 8,
+      "label": "E8",
+      "disabled": false
+    },
+    {
+      "id": 49,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 9,
+      "label": "E9",
+      "disabled": false
+    },
+    {
+      "id": 50,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "E",
+      "number": 10,
+      "label": "E10",
+      "disabled": false
+    },
+    {
+      "id": 51,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 1,
+      "label": "F1",
+      "disabled": false
+    },
+    {
+      "id": 52,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 2,
+      "label": "F2",
+      "disabled": false
+    },
+    {
+      "id": 53,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 3,
+      "label": "F3",
+      "disabled": false
+    },
+    {
+      "id": 54,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 4,
+      "label": "F4",
+      "disabled": false
+    },
+    {
+      "id": 55,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 5,
+      "label": "F5",
+      "disabled": false
+    },
+    {
+      "id": 56,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 6,
+      "label": "F6",
+      "disabled": false
+    },
+    {
+      "id": 57,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 7,
+      "label": "F7",
+      "disabled": false
+    },
+    {
+      "id": 58,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 8,
+      "label": "F8",
+      "disabled": false
+    },
+    {
+      "id": 59,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 9,
+      "label": "F9",
+      "disabled": false
+    },
+    {
+      "id": 60,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "F",
+      "number": 10,
+      "label": "F10",
+      "disabled": false
+    },
+    {
+      "id": 61,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 1,
+      "label": "G1",
+      "disabled": false
+    },
+    {
+      "id": 62,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 2,
+      "label": "G2",
+      "disabled": false
+    },
+    {
+      "id": 63,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 3,
+      "label": "G3",
+      "disabled": false
+    },
+    {
+      "id": 64,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 4,
+      "label": "G4",
+      "disabled": false
+    },
+    {
+      "id": 65,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 5,
+      "label": "G5",
+      "disabled": false
+    },
+    {
+      "id": 66,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 6,
+      "label": "G6",
+      "disabled": false
+    },
+    {
+      "id": 67,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 7,
+      "label": "G7",
+      "disabled": false
+    },
+    {
+      "id": 68,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 8,
+      "label": "G8",
+      "disabled": false
+    },
+    {
+      "id": 69,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 9,
+      "label": "G9",
+      "disabled": false
+    },
+    {
+      "id": 70,
+      "hallId": 1,
+      "sectorId": 2,
+      "row": "G",
+      "number": 10,
+      "label": "G10",
+      "disabled": false
+    },
+    {
+      "id": 71,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 1,
+      "label": "H1",
+      "disabled": false
+    },
+    {
+      "id": 72,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 2,
+      "label": "H2",
+      "disabled": false
+    },
+    {
+      "id": 73,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 3,
+      "label": "H3",
+      "disabled": false
+    },
+    {
+      "id": 74,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 4,
+      "label": "H4",
+      "disabled": false
+    },
+    {
+      "id": 75,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 5,
+      "label": "H5",
+      "disabled": false
+    },
+    {
+      "id": 76,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 6,
+      "label": "H6",
+      "disabled": false
+    },
+    {
+      "id": 77,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 7,
+      "label": "H7",
+      "disabled": false
+    },
+    {
+      "id": 78,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 8,
+      "label": "H8",
+      "disabled": false
+    },
+    {
+      "id": 79,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 9,
+      "label": "H9",
+      "disabled": false
+    },
+    {
+      "id": 80,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "H",
+      "number": 10,
+      "label": "H10",
+      "disabled": false
+    },
+    {
+      "id": 81,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 1,
+      "label": "I1",
+      "disabled": false
+    },
+    {
+      "id": 82,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 2,
+      "label": "I2",
+      "disabled": false
+    },
+    {
+      "id": 83,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 3,
+      "label": "I3",
+      "disabled": false
+    },
+    {
+      "id": 84,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 4,
+      "label": "I4",
+      "disabled": false
+    },
+    {
+      "id": 85,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 5,
+      "label": "I5",
+      "disabled": false
+    },
+    {
+      "id": 86,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 6,
+      "label": "I6",
+      "disabled": false
+    },
+    {
+      "id": 87,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 7,
+      "label": "I7",
+      "disabled": false
+    },
+    {
+      "id": 88,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 8,
+      "label": "I8",
+      "disabled": false
+    },
+    {
+      "id": 89,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 9,
+      "label": "I9",
+      "disabled": false
+    },
+    {
+      "id": 90,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "I",
+      "number": 10,
+      "label": "I10",
+      "disabled": false
+    },
+    {
+      "id": 91,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 1,
+      "label": "J1",
+      "disabled": true,
+      "disabledReason": "Sérült szék / rálátás nem megfelelő"
+    },
+    {
+      "id": 92,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 2,
+      "label": "J2",
+      "disabled": false
+    },
+    {
+      "id": 93,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 3,
+      "label": "J3",
+      "disabled": false
+    },
+    {
+      "id": 94,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 4,
+      "label": "J4",
+      "disabled": false
+    },
+    {
+      "id": 95,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 5,
+      "label": "J5",
+      "disabled": false
+    },
+    {
+      "id": 96,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 6,
+      "label": "J6",
+      "disabled": false
+    },
+    {
+      "id": 97,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 7,
+      "label": "J7",
+      "disabled": false
+    },
+    {
+      "id": 98,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 8,
+      "label": "J8",
+      "disabled": false
+    },
+    {
+      "id": 99,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 9,
+      "label": "J9",
+      "disabled": false
+    },
+    {
+      "id": 100,
+      "hallId": 1,
+      "sectorId": 3,
+      "row": "J",
+      "number": 10,
+      "label": "J10",
+      "disabled": true,
+      "disabledReason": "Sérült szék / rálátás nem megfelelő"
+    },
+    {
+      "id": 101,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 1,
+      "label": "A1",
+      "disabled": false
+    },
+    {
+      "id": 102,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 2,
+      "label": "A2",
+      "disabled": false
+    },
+    {
+      "id": 103,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 3,
+      "label": "A3",
+      "disabled": false
+    },
+    {
+      "id": 104,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 4,
+      "label": "A4",
+      "disabled": false
+    },
+    {
+      "id": 105,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 5,
+      "label": "A5",
+      "disabled": false
+    },
+    {
+      "id": 106,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 6,
+      "label": "A6",
+      "disabled": false
+    },
+    {
+      "id": 107,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 7,
+      "label": "A7",
+      "disabled": false
+    },
+    {
+      "id": 108,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "A",
+      "number": 8,
+      "label": "A8",
+      "disabled": false
+    },
+    {
+      "id": 109,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 1,
+      "label": "B1",
+      "disabled": false
+    },
+    {
+      "id": 110,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 2,
+      "label": "B2",
+      "disabled": false
+    },
+    {
+      "id": 111,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 3,
+      "label": "B3",
+      "disabled": false
+    },
+    {
+      "id": 112,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 4,
+      "label": "B4",
+      "disabled": false
+    },
+    {
+      "id": 113,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 5,
+      "label": "B5",
+      "disabled": false
+    },
+    {
+      "id": 114,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 6,
+      "label": "B6",
+      "disabled": false
+    },
+    {
+      "id": 115,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 7,
+      "label": "B7",
+      "disabled": false
+    },
+    {
+      "id": 116,
+      "hallId": 2,
+      "sectorId": 4,
+      "row": "B",
+      "number": 8,
+      "label": "B8",
+      "disabled": false
+    },
+    {
+      "id": 117,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 1,
+      "label": "C1",
+      "disabled": false
+    },
+    {
+      "id": 118,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 2,
+      "label": "C2",
+      "disabled": false
+    },
+    {
+      "id": 119,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 3,
+      "label": "C3",
+      "disabled": false
+    },
+    {
+      "id": 120,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 4,
+      "label": "C4",
+      "disabled": false
+    },
+    {
+      "id": 121,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 5,
+      "label": "C5",
+      "disabled": false
+    },
+    {
+      "id": 122,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 6,
+      "label": "C6",
+      "disabled": false
+    },
+    {
+      "id": 123,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 7,
+      "label": "C7",
+      "disabled": false
+    },
+    {
+      "id": 124,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "C",
+      "number": 8,
+      "label": "C8",
+      "disabled": false
+    },
+    {
+      "id": 125,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 1,
+      "label": "D1",
+      "disabled": false
+    },
+    {
+      "id": 126,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 2,
+      "label": "D2",
+      "disabled": false
+    },
+    {
+      "id": 127,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 3,
+      "label": "D3",
+      "disabled": false
+    },
+    {
+      "id": 128,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 4,
+      "label": "D4",
+      "disabled": false
+    },
+    {
+      "id": 129,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 5,
+      "label": "D5",
+      "disabled": false
+    },
+    {
+      "id": 130,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 6,
+      "label": "D6",
+      "disabled": false
+    },
+    {
+      "id": 131,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 7,
+      "label": "D7",
+      "disabled": false
+    },
+    {
+      "id": 132,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "D",
+      "number": 8,
+      "label": "D8",
+      "disabled": false
+    },
+    {
+      "id": 133,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 1,
+      "label": "E1",
+      "disabled": true,
+      "disabledReason": "Sérült szék / rálátás nem megfelelő"
+    },
+    {
+      "id": 134,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 2,
+      "label": "E2",
+      "disabled": false
+    },
+    {
+      "id": 135,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 3,
+      "label": "E3",
+      "disabled": false
+    },
+    {
+      "id": 136,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 4,
+      "label": "E4",
+      "disabled": false
+    },
+    {
+      "id": 137,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 5,
+      "label": "E5",
+      "disabled": false
+    },
+    {
+      "id": 138,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 6,
+      "label": "E6",
+      "disabled": false
+    },
+    {
+      "id": 139,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 7,
+      "label": "E7",
+      "disabled": false
+    },
+    {
+      "id": 140,
+      "hallId": 2,
+      "sectorId": 5,
+      "row": "E",
+      "number": 8,
+      "label": "E8",
+      "disabled": false
+    },
+    {
+      "id": 141,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 1,
+      "label": "A1",
+      "disabled": true,
+      "disabledReason": "Sérült szék / rálátás nem megfelelő"
+    },
+    {
+      "id": 142,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 2,
+      "label": "A2",
+      "disabled": false
+    },
+    {
+      "id": 143,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 3,
+      "label": "A3",
+      "disabled": false
+    },
+    {
+      "id": 144,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 4,
+      "label": "A4",
+      "disabled": false
+    },
+    {
+      "id": 145,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 5,
+      "label": "A5",
+      "disabled": false
+    },
+    {
+      "id": 146,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 6,
+      "label": "A6",
+      "disabled": false
+    },
+    {
+      "id": 147,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 7,
+      "label": "A7",
+      "disabled": false
+    },
+    {
+      "id": 148,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 8,
+      "label": "A8",
+      "disabled": false
+    },
+    {
+      "id": 149,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 9,
+      "label": "A9",
+      "disabled": false
+    },
+    {
+      "id": 150,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "A",
+      "number": 10,
+      "label": "A10",
+      "disabled": false
+    },
+    {
+      "id": 151,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 1,
+      "label": "B1",
+      "disabled": false
+    },
+    {
+      "id": 152,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 2,
+      "label": "B2",
+      "disabled": false
+    },
+    {
+      "id": 153,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 3,
+      "label": "B3",
+      "disabled": false
+    },
+    {
+      "id": 154,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 4,
+      "label": "B4",
+      "disabled": false
+    },
+    {
+      "id": 155,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 5,
+      "label": "B5",
+      "disabled": false
+    },
+    {
+      "id": 156,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 6,
+      "label": "B6",
+      "disabled": false
+    },
+    {
+      "id": 157,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 7,
+      "label": "B7",
+      "disabled": false
+    },
+    {
+      "id": 158,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 8,
+      "label": "B8",
+      "disabled": false
+    },
+    {
+      "id": 159,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 9,
+      "label": "B9",
+      "disabled": false
+    },
+    {
+      "id": 160,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "B",
+      "number": 10,
+      "label": "B10",
+      "disabled": false
+    },
+    {
+      "id": 161,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 1,
+      "label": "C1",
+      "disabled": false
+    },
+    {
+      "id": 162,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 2,
+      "label": "C2",
+      "disabled": false
+    },
+    {
+      "id": 163,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 3,
+      "label": "C3",
+      "disabled": false
+    },
+    {
+      "id": 164,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 4,
+      "label": "C4",
+      "disabled": false
+    },
+    {
+      "id": 165,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 5,
+      "label": "C5",
+      "disabled": false
+    },
+    {
+      "id": 166,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 6,
+      "label": "C6",
+      "disabled": false
+    },
+    {
+      "id": 167,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 7,
+      "label": "C7",
+      "disabled": false
+    },
+    {
+      "id": 168,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 8,
+      "label": "C8",
+      "disabled": false
+    },
+    {
+      "id": 169,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 9,
+      "label": "C9",
+      "disabled": false
+    },
+    {
+      "id": 170,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "C",
+      "number": 10,
+      "label": "C10",
+      "disabled": false
+    },
+    {
+      "id": 171,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 1,
+      "label": "D1",
+      "disabled": false
+    },
+    {
+      "id": 172,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 2,
+      "label": "D2",
+      "disabled": false
+    },
+    {
+      "id": 173,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 3,
+      "label": "D3",
+      "disabled": false
+    },
+    {
+      "id": 174,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 4,
+      "label": "D4",
+      "disabled": false
+    },
+    {
+      "id": 175,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 5,
+      "label": "D5",
+      "disabled": false
+    },
+    {
+      "id": 176,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 6,
+      "label": "D6",
+      "disabled": false
+    },
+    {
+      "id": 177,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 7,
+      "label": "D7",
+      "disabled": false
+    },
+    {
+      "id": 178,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 8,
+      "label": "D8",
+      "disabled": false
+    },
+    {
+      "id": 179,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 9,
+      "label": "D9",
+      "disabled": false
+    },
+    {
+      "id": 180,
+      "hallId": 3,
+      "sectorId": 6,
+      "row": "D",
+      "number": 10,
+      "label": "D10",
+      "disabled": false
+    },
+    {
+      "id": 181,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 1,
+      "label": "E1",
+      "disabled": false
+    },
+    {
+      "id": 182,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 2,
+      "label": "E2",
+      "disabled": false
+    },
+    {
+      "id": 183,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 3,
+      "label": "E3",
+      "disabled": false
+    },
+    {
+      "id": 184,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 4,
+      "label": "E4",
+      "disabled": false
+    },
+    {
+      "id": 185,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 5,
+      "label": "E5",
+      "disabled": false
+    },
+    {
+      "id": 186,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 6,
+      "label": "E6",
+      "disabled": false
+    },
+    {
+      "id": 187,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 7,
+      "label": "E7",
+      "disabled": false
+    },
+    {
+      "id": 188,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 8,
+      "label": "E8",
+      "disabled": false
+    },
+    {
+      "id": 189,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 9,
+      "label": "E9",
+      "disabled": false
+    },
+    {
+      "id": 190,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "E",
+      "number": 10,
+      "label": "E10",
+      "disabled": false
+    },
+    {
+      "id": 191,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 1,
+      "label": "F1",
+      "disabled": false
+    },
+    {
+      "id": 192,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 2,
+      "label": "F2",
+      "disabled": false
+    },
+    {
+      "id": 193,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 3,
+      "label": "F3",
+      "disabled": false
+    },
+    {
+      "id": 194,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 4,
+      "label": "F4",
+      "disabled": false
+    },
+    {
+      "id": 195,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 5,
+      "label": "F5",
+      "disabled": false
+    },
+    {
+      "id": 196,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 6,
+      "label": "F6",
+      "disabled": false
+    },
+    {
+      "id": 197,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 7,
+      "label": "F7",
+      "disabled": false
+    },
+    {
+      "id": 198,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 8,
+      "label": "F8",
+      "disabled": false
+    },
+    {
+      "id": 199,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 9,
+      "label": "F9",
+      "disabled": false
+    },
+    {
+      "id": 200,
+      "hallId": 3,
+      "sectorId": 7,
+      "row": "F",
+      "number": 10,
+      "label": "F10",
+      "disabled": false
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "Hajnali vonat",
+      "type": "film",
+      "genre": "dráma",
+      "durationMin": 112,
+      "ageRating": "12",
+      "description": "Egy kisvárosi vasutas és egy hazatérő lány története az utolsó éjszakai járat körül.",
+      "posterUrl": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440'%3E%3Crect width='300' height='440' fill='%232b2a33'/%3E%3Crect x='18' y='18' width='264' height='404' fill='none' stroke='%23e8d9b5' stroke-width='3'/%3E%3Ctext x='150' y='230' font-family='Georgia,serif' font-size='26' fill='%23e8d9b5' text-anchor='middle'%3EHajnali vonat%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": 2,
+      "title": "A kert titka",
+      "type": "film",
+      "genre": "családi",
+      "durationMin": 96,
+      "ageRating": "6",
+      "description": "Három gyerek egy elhagyott kertben talál rá a nyár legnagyobb kalandjára.",
+      "posterUrl": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440'%3E%3Crect width='300' height='440' fill='%231f3a2e'/%3E%3Crect x='18' y='18' width='264' height='404' fill='none' stroke='%23f1e7c8' stroke-width='3'/%3E%3Ctext x='150' y='230' font-family='Georgia,serif' font-size='26' fill='%23f1e7c8' text-anchor='middle'%3EA kert titka%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": 3,
+      "title": "Tiszai szél",
+      "type": "film",
+      "genre": "dokumentum",
+      "durationMin": 78,
+      "ageRating": "0",
+      "description": "Dokumentumfilm a Tisza-menti települések mindennapjairól.",
+      "posterUrl": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440'%3E%3Crect width='300' height='440' fill='%2323394d'/%3E%3Crect x='18' y='18' width='264' height='404' fill='none' stroke='%23f4efe6' stroke-width='3'/%3E%3Ctext x='150' y='230' font-family='Georgia,serif' font-size='26' fill='%23f4efe6' text-anchor='middle'%3ETiszai sz%C3%A9l%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": 4,
+      "title": "Csillagfény",
+      "type": "film",
+      "genre": "sci-fi",
+      "durationMin": 128,
+      "ageRating": "16",
+      "description": "Egy kutatóűrállomás legénysége különös jelet fog el a Naprendszer határáról.",
+      "posterUrl": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440'%3E%3Crect width='300' height='440' fill='%2310162b'/%3E%3Crect x='18' y='18' width='264' height='404' fill='none' stroke='%23f2c94c' stroke-width='3'/%3E%3Ctext x='150' y='230' font-family='Georgia,serif' font-size='26' fill='%23f2c94c' text-anchor='middle'%3ECsillagf%C3%A9ny%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": 5,
+      "title": "Vigadó Jazz Est",
+      "type": "event",
+      "genre": "koncert",
+      "durationMin": 110,
+      "ageRating": "0",
+      "description": "Élő jazzkoncert helyi és vendég zenészekkel.",
+      "posterUrl": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440'%3E%3Crect width='300' height='440' fill='%234a1f2b'/%3E%3Crect x='18' y='18' width='264' height='404' fill='none' stroke='%23f3dfc1' stroke-width='3'/%3E%3Ctext x='150' y='230' font-family='Georgia,serif' font-size='26' fill='%23f3dfc1' text-anchor='middle'%3EVigad%C3%B3 Jazz Est%3C/text%3E%3C/svg%3E"
+    },
+    {
+      "id": 6,
+      "title": "Mesedélután",
+      "type": "event",
+      "genre": "gyerekelőadás",
+      "durationMin": 60,
+      "ageRating": "0",
+      "description": "Bábos mesedélután óvodásoknak és kisiskolásoknak.",
+      "posterUrl": "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='440' viewBox='0 0 300 440'%3E%3Crect width='300' height='440' fill='%235b3a1e'/%3E%3Crect x='18' y='18' width='264' height='404' fill='none' stroke='%23fbeed0' stroke-width='3'/%3E%3Ctext x='150' y='230' font-family='Georgia,serif' font-size='26' fill='%23fbeed0' text-anchor='middle'%3EMesed%C3%A9lut%C3%A1n%3C/text%3E%3C/svg%3E"
+    }
+  ],
+  "screenings": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "hallId": 1,
+      "startsAt": "2026-12-04T18:00:00+01:00",
+      "basePrice": 2000,
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "movieId": 1,
+      "hallId": 1,
+      "startsAt": "2026-12-05T20:00:00+01:00",
+      "basePrice": 2000,
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "movieId": 2,
+      "hallId": 2,
+      "startsAt": "2026-12-05T16:00:00+01:00",
+      "basePrice": 1600,
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "movieId": 2,
+      "hallId": 2,
+      "startsAt": "2026-12-06T15:00:00+01:00",
+      "basePrice": 1600,
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "movieId": 3,
+      "hallId": 2,
+      "startsAt": "2026-12-06T18:00:00+01:00",
+      "basePrice": 1500,
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "movieId": 4,
+      "hallId": 1,
+      "startsAt": "2026-12-11T19:30:00+01:00",
+      "basePrice": 2200,
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "movieId": 4,
+      "hallId": 3,
+      "startsAt": "2026-12-12T19:00:00+01:00",
+      "basePrice": 1800,
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "movieId": 5,
+      "hallId": 1,
+      "startsAt": "2026-12-18T19:00:00+01:00",
+      "basePrice": 3500,
+      "status": "active"
+    },
+    {
+      "id": 9,
+      "movieId": 6,
+      "hallId": 3,
+      "startsAt": "2026-12-19T15:00:00+01:00",
+      "basePrice": 1200,
+      "status": "active"
+    },
+    {
+      "id": 10,
+      "movieId": 3,
+      "hallId": 3,
+      "startsAt": "2026-12-20T18:00:00+01:00",
+      "basePrice": 1500,
+      "status": "active"
+    }
+  ],
+  "priceOverrides": [
+    {
+      "id": 1,
+      "screeningId": 1,
+      "scope": "sector",
+      "targetId": 1,
+      "price": 2500
+    },
+    {
+      "id": 2,
+      "screeningId": 1,
+      "scope": "seat",
+      "targetId": 3,
+      "price": 3000
+    },
+    {
+      "id": 3,
+      "screeningId": 2,
+      "scope": "sector",
+      "targetId": 2,
+      "price": 2300
+    },
+    {
+      "id": 4,
+      "screeningId": 2,
+      "scope": "seat",
+      "targetId": 55,
+      "price": 2800
+    },
+    {
+      "id": 5,
+      "screeningId": 2,
+      "scope": "seat",
+      "targetId": 56,
+      "price": 2800
+    },
+    {
+      "id": 6,
+      "screeningId": 6,
+      "scope": "sector",
+      "targetId": 1,
+      "price": 2800
+    },
+    {
+      "id": 7,
+      "screeningId": 7,
+      "scope": "sector",
+      "targetId": 7,
+      "price": 2600
+    },
+    {
+      "id": 8,
+      "screeningId": 8,
+      "scope": "sector",
+      "targetId": 1,
+      "price": 4500
+    },
+    {
+      "id": 9,
+      "screeningId": 8,
+      "scope": "sector",
+      "targetId": 2,
+      "price": 4000
+    },
+    {
+      "id": 10,
+      "screeningId": 9,
+      "scope": "seat",
+      "targetId": 181,
+      "price": 1000
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "code": "FG-4K7M2Q",
+      "screeningId": 1,
+      "seatIds": [
+        15,
+        16
+      ],
+      "status": "active",
+      "channel": "online",
+      "customerName": "Tóth Mária",
+      "customerContact": "toth.maria@example.test",
+      "createdAt": "2026-11-20T14:12:00+01:00",
+      "createdBy": null
+    },
+    {
+      "id": 2,
+      "code": "FG-9P3X1D",
+      "screeningId": 2,
+      "seatIds": [
+        55,
+        56
+      ],
+      "status": "active",
+      "channel": "cashier",
+      "customerName": "Varga István",
+      "customerContact": "+36 30 000 0000",
+      "createdAt": "2026-11-21T10:30:00+01:00",
+      "createdBy": 2
+    },
+    {
+      "id": 3,
+      "code": "FG-2H8N5R",
+      "screeningId": 3,
+      "seatIds": [
+        119
+      ],
+      "status": "cancelled",
+      "channel": "online",
+      "customerName": "Kiss Dóra",
+      "customerContact": "kiss.dora@example.test",
+      "createdAt": "2026-11-19T18:45:00+01:00",
+      "createdBy": null
+    },
+    {
+      "id": 4,
+      "code": "FG-6T1V9B",
+      "screeningId": 6,
+      "seatIds": [
+        34,
+        35,
+        36
+      ],
+      "status": "converted",
+      "channel": "online",
+      "customerName": "Horváth Gábor",
+      "customerContact": "horvath.gabor@example.test",
+      "createdAt": "2026-11-22T09:20:00+01:00",
+      "createdBy": null
+    },
+    {
+      "id": 5,
+      "code": "FG-8C5L3W",
+      "screeningId": 8,
+      "seatIds": [
+        4,
+        5
+      ],
+      "status": "active",
+      "channel": "online",
+      "customerName": "Balogh Réka",
+      "customerContact": "balogh.reka@example.test",
+      "createdAt": "2026-11-23T16:05:00+01:00",
+      "createdBy": null
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "screeningId": 1,
+      "channel": "online",
+      "paymentMethod": "card",
+      "reservationId": null,
+      "tickets": [
+        {
+          "seatId": 3,
+          "price": 3000,
+          "ticketCode": "TK-100001-1"
+        },
+        {
+          "seatId": 4,
+          "price": 2500,
+          "ticketCode": "TK-100001-2"
+        }
+      ],
+      "ticketCount": 2,
+      "total": 5500,
+      "paymentRef": "pi_test_3Qx7a1",
+      "status": "paid",
+      "createdAt": "2026-11-21T19:02:00+01:00",
+      "createdBy": null
+    },
+    {
+      "id": 2,
+      "screeningId": 1,
+      "channel": "online",
+      "paymentMethod": "card",
+      "reservationId": null,
+      "tickets": [
+        {
+          "seatId": 75,
+          "price": 2000,
+          "ticketCode": "TK-100002-1"
+        },
+        {
+          "seatId": 76,
+          "price": 2000,
+          "ticketCode": "TK-100002-2"
+        },
+        {
+          "seatId": 77,
+          "price": 2000,
+          "ticketCode": "TK-100002-3"
+        }
+      ],
+      "ticketCount": 3,
+      "total": 6000,
+      "paymentRef": "pi_test_3Qx9b4",
+      "status": "paid",
+      "createdAt": "2026-11-22T12:40:00+01:00",
+      "createdBy": null
+    },
+    {
+      "id": 3,
+      "screeningId": 6,
+      "channel": "online",
+      "paymentMethod": "card",
+      "reservationId": 4,
+      "tickets": [
+        {
+          "seatId": 34,
+          "price": 2200,
+          "ticketCode": "TK-100003-1"
+        },
+        {
+          "seatId": 35,
+          "price": 2200,
+          "ticketCode": "TK-100003-2"
+        },
+        {
+          "seatId": 36,
+          "price": 2200,
+          "ticketCode": "TK-100003-3"
+        }
+      ],
+      "ticketCount": 3,
+      "total": 6600,
+      "paymentRef": "pi_test_3Qxc7k",
+      "status": "paid",
+      "createdAt": "2026-11-22T09:31:00+01:00",
+      "createdBy": null
+    },
+    {
+      "id": 4,
+      "screeningId": 3,
+      "channel": "cashier",
+      "paymentMethod": "cash",
+      "reservationId": null,
+      "tickets": [
+        {
+          "seatId": 101,
+          "price": 1600,
+          "ticketCode": "TK-100004-1"
+        },
+        {
+          "seatId": 102,
+          "price": 1600,
+          "ticketCode": "TK-100004-2"
+        }
+      ],
+      "ticketCount": 2,
+      "total": 3200,
+      "paymentRef": null,
+      "status": "paid",
+      "createdAt": "2026-11-24T11:15:00+01:00",
+      "createdBy": 2
+    },
+    {
+      "id": 5,
+      "screeningId": 7,
+      "channel": "cashier",
+      "paymentMethod": "card",
+      "reservationId": null,
+      "tickets": [
+        {
+          "seatId": 183,
+          "price": 2600,
+          "ticketCode": "TK-100005-1"
+        },
+        {
+          "seatId": 184,
+          "price": 2600,
+          "ticketCode": "TK-100005-2"
+        }
+      ],
+      "ticketCount": 2,
+      "total": 5200,
+      "paymentRef": null,
+      "status": "paid",
+      "createdAt": "2026-11-24T15:50:00+01:00",
+      "createdBy": 2
+    },
+    {
+      "id": 6,
+      "screeningId": 9,
+      "channel": "online",
+      "paymentMethod": "card",
+      "reservationId": null,
+      "tickets": [
+        {
+          "seatId": 181,
+          "price": 1000,
+          "ticketCode": "TK-100006-1"
+        },
+        {
+          "seatId": 182,
+          "price": 1200,
+          "ticketCode": "TK-100006-2"
+        }
+      ],
+      "ticketCount": 2,
+      "total": 2200,
+      "paymentRef": "pi_test_3Qxd2m",
+      "status": "paid",
+      "createdAt": "2026-11-25T08:10:00+01:00",
+      "createdBy": null
+    }
+  ],
+  "seatLocks": []
+}
