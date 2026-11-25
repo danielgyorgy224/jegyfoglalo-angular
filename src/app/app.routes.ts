@@ -1,6 +1,12 @@
 import { Routes } from '@angular/router';
+import { adminGuard, cashierGuard } from './core/auth/auth.guards';
 
 export const routes: Routes = [
+  {
+    path: 'login',
+    title: 'Belépés – Kisújszállási Vigadó',
+    loadComponent: () => import('./core/auth/login-page.component').then((m) => m.LoginPageComponent),
+  },
   {
     path: '',
     title: 'Műsor – Kisújszállási Vigadó',
@@ -32,6 +38,20 @@ export const routes: Routes = [
     title: 'Fizetés eredménye – Kisújszállási Vigadó',
     loadComponent: () =>
       import('./features/payment/payment-result-page.component').then((m) => m.PaymentResultPageComponent),
+  },
+  {
+    path: 'admin',
+    title: 'Adminisztráció – Kisújszállási Vigadó',
+    canActivate: [adminGuard],
+    loadComponent: () => import('./admin/admin-shell.component').then((m) => m.AdminShellComponent),
+    loadChildren: () => import('./admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+  },
+  {
+    path: 'box-office',
+    title: 'Pénztár – Kisújszállási Vigadó',
+    canActivate: [cashierGuard],
+    loadComponent: () => import('./box-office/box-office-shell.component').then((m) => m.BoxOfficeShellComponent),
+    loadChildren: () => import('./box-office/box-office.routes').then((m) => m.BOX_OFFICE_ROUTES),
   },
   {
     path: '**',
